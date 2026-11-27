@@ -1,7 +1,11 @@
 #include "CurrentDivider.hpp"
 #include <stdexcept>
 
-CurrentDivider::CurrentDivider(double i, double res[], int num_res)
+// 2 nodes, components 0..n
+// Component 0 = source, components 1..n = resistors
+// Every component: A = node 0, B = node 1
+
+CurrentDivider::CurrentDivider(double c, double res[], int num_res)
     : Network(2, num_res + 1)
 {
   if (num_res < 1)
@@ -11,7 +15,7 @@ CurrentDivider::CurrentDivider(double i, double res[], int num_res)
   set_component(0, cs);
   connect_component_terminal_a(0, 0);
   connect_component_terminal_b(0, 1);
-  set_component_value(0, i);
+  set_component_value(0, c);
 
   for (int k = 0; k < num_res; k++)
   {
@@ -72,9 +76,9 @@ double CurrentDivider::get_resistor_current(int idx) const
   return get_component_current(idx + 1);
 }
 
-void CurrentDivider::set_source_current(double i)
+void CurrentDivider::set_source_current(double c)
 {
-  set_component_value(0, i);
+  set_component_value(0, c);
   update_node_voltages();
 }
 

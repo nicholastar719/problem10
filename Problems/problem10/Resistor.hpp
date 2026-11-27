@@ -5,12 +5,9 @@
 
 class Resistor : public Component
 {
-  // only define private members not in base class
-  // most likely none needed
-
 public:
   using Component::Component;
-  void set_value(double r) override;
+  void set_value(double newval) override;
   double get_current() const override;
 };
 

@@ -13,6 +13,7 @@ public:
   void set_load(double rl);
   double get_load_power() const;
   bool maximum_power_transfer(double rl);
+  double get_source_voltage() const override final;
 };
 
 #endif

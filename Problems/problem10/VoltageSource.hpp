@@ -1,13 +1,10 @@
-#ifndef VOLTAGE_SOURCE_HPP
-#define VOLTAGE_SOURCE_HPP
+#ifndef VOLTAGESOURCE_HPP
+#define VOLTAGESOURCE_HPP
 
 #include "Component.hpp"
 
 class VoltageSource : public Component
 {
-  // only define private members not in base class
-  // most likely none needed
-
 public:
   using Component::Component;
   double get_voltage() const override;

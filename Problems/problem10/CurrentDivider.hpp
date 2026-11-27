@@ -8,7 +8,7 @@
 class CurrentDivider : public Network
 {
 private:
-  // TODO: little to no here, only add private ones when necessary
+  void update_node_voltages();
 
 public:
   CurrentDivider(double c, double res[], int num_res);
@@ -20,7 +20,6 @@ public:
 
   void set_source_current(double c);
   void set_resistance(int idx, double r);
-  void update_node_voltages();
 };
 
 #endif
