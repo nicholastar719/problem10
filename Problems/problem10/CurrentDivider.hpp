@@ -20,6 +20,7 @@ public:
 
   void set_source_current(double c);
   void set_resistance(int idx, double r);
+  void update_node_voltages();
 };
 
 #endif
